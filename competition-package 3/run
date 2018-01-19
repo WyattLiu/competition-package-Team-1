@@ -1,0 +1,17 @@
+#!/bin/csh
+
+# replace me with your own script
+# it doesn't need to be bash if it can be run from shell,
+# but you must set the shebang (https://en.wikipedia.org/wiki/Shebang_(Unix))
+# with something that works with the ECF or GCP
+
+# resolve file dir
+set train_file = `readlink -f ptb.train.txt`
+# or if readlink does not work plz hard code one in pointing to the ptb
+
+cat ./input/1a.in | ./solution/1a_solution.pl > ./output/1a.out 
+cat ./input/1b.in | ./solution/1b_solution.pl > ./output/1b.out 
+cat ./input/1c.in | ./solution/1c_solution.pl > ./output/1c.out
+cat ./input/2a.in | ./solution/2a_solution.pl $train_file > ./output/2a.out
+cat ./input/2b.in | ./solution/2b_solution.pl $train_file > ./output/2b.out
+cat ./input/3a.in | ./solution/3a_solution.pl $train_file > ./output/3a.out
